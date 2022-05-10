@@ -11,12 +11,16 @@
 	--clr-neutral-500: hsl(212, 27%, 19%);
 
 	--clr-white: hsl(0, 0%, 100%);
+	--clr-black: hsl(0, 0%, 0%);
 
 	--ff-primary: 'Fraunces', serif;
 	--ff-secondary: 'Barlow', sans-serif;
 
 	// stage
 	--ff-heading: var(--ff-primary);
+	--nav-link: var(--clr-white);
+	--bg-btn-nav-link: var(--clr-white);
+	--ff-btn-link: var(--ff-primary);
 }
 
 // RESET
@@ -61,3 +65,62 @@ q:after {
 }
 
 // main css
+h1,
+h2,
+h3 {
+	font-family: var(--ff-heading);
+}
+
+// header
+.header {
+	background-image: url('../images/desktop/image-header.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+// navigation
+.nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2em 1.5em;
+
+	&__burger-btn {
+		padding: 0.5em;
+		background: none;
+		border: none;
+		cursor: pointer;
+
+		@media (min-width: 47.5em) {
+			display: none;
+		}
+	}
+
+	&__links {
+		display: none;
+
+		@media (min-width: 47.5em) {
+			display: flex;
+		}
+	}
+
+	&__link {
+		display: block;
+		padding: 1em 1.5em;
+		font-size: 1.8rem;
+		font-weight: 600;
+		text-decoration: none;
+		color: var(--nav-link);
+
+		&--btn {
+			--nav-link: var(--clr-black);
+
+			padding-inline: 2em;
+			margin-left: 1.5em;
+			font-family: var(--ff-btn-link);
+			text-transform: uppercase;
+			background-color: var(--clr-white);
+			border-radius: 50em;
+		}
+	}
+}
