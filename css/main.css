@@ -1,0 +1,44 @@
+:root {
+  --clr-primary-100: hsl(7, 99%, 70%);
+  --clr-primary-200: hsl(51, 100%, 49%);
+  --clr-primary-400: hsl(167, 40%, 24%);
+  --clr-primary-500: hsl(198, 62%, 26%);
+  --clr-primary-700: hsl(168, 34%, 41%);
+  --clr-neutral-200: hsl(210, 4%, 67%);
+  --clr-neutral-300: hsl(232, 10%, 55%);
+  --clr-neutral-400: hsl(213, 9%, 39%);
+  --clr-neutral-500: hsl(212, 27%, 19%);
+  --clr-white: hsl(0, 0%, 100%);
+  --ff-primary: 'Fraunces', serif;
+  --ff-secondary: 'Barlow', sans-serif;
+  --ff-heading: var(--ff-primary);
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: var(--ff-secondary);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+/*# sourceMappingURL=main.css.map */
