@@ -39,6 +39,10 @@
 	--testimonial-quote: var(--clr-neutral-400);
 	--testimonial-author: var(--clr-neutral-500);
 	--testimonial-role: var(--clr-neutral-200);
+
+	--bg-footer: hsl(167, 44%, 70%);
+	--clr-footer-text: var(--clr-primary-700);
+	--footer-link-hover: var(--clr-white);
 }
 
 // RESET
@@ -409,5 +413,56 @@ h1 {
 
 	& img {
 		width: 100%;
+	}
+}
+
+// footer
+.footer {
+	display: grid;
+	place-items: center;
+	padding: 4.5em 2.5em 5em;
+	text-align: center;
+	background-color: var(--bg-footer);
+	color: var(--clr-footer-text);
+
+	&__logo {
+		transform: scale(1.5);
+		margin-bottom: 2.5em;
+	}
+
+	&__links {
+		display: flex;
+		gap: 5rem;
+		margin-bottom: 5em;
+	}
+
+	&__link {
+		font-size: 1.8rem;
+		font-weight: 600;
+		text-decoration: none;
+		color: inherit;
+		transition: color 0.35s ease;
+
+		&:hover {
+			color: var(--footer-link-hover);
+		}
+	}
+
+	&__media {
+		display: flex;
+		align-items: center;
+		gap: 3rem;
+	}
+
+	&__media-link {
+		& svg path {
+			transition: fill 0.35s ease;
+		}
+
+		&:hover {
+			& svg path {
+				fill: var(--footer-link-hover);
+			}
+		}
 	}
 }
