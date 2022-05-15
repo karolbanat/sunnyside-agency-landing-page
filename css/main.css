@@ -435,4 +435,22 @@ h1 {
   font-weight: 600;
   color: var(--testimonial-role);
 }
+
+.gallery {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 50em) {
+  .gallery {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.gallery img {
+  width: 100%;
+}
 /*# sourceMappingURL=main.css.map */

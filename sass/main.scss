@@ -397,3 +397,17 @@ h1 {
 		color: var(--testimonial-role);
 	}
 }
+
+// gallery
+.gallery {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+
+	@media (min-width: 50em) {
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	& img {
+		width: 100%;
+	}
+}
