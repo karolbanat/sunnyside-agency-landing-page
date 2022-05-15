@@ -24,6 +24,8 @@
   --clr-about-link-pink: hsla(7, 99%, 70%, 0.3);
   --clr-about-link-yellow-hover: var(--clr-primary-200);
   --clr-about-link-pink-hover: var(--clr-primary-100);
+  --graphic-service: var(--clr-primary-400);
+  --photography-service: var(--clr-primary-500);
 }
 
 *,
@@ -71,12 +73,12 @@ h1,
 h2,
 h3 {
   font-family: var(--ff-heading);
+  font-weight: 900;
 }
 
 h1 {
   margin-block: clamp(6rem, 10vw, 9rem);
   font-size: clamp(3.6rem, 10vw, 5.4rem);
-  font-weight: 900;
   letter-spacing: 8px;
   text-transform: uppercase;
   color: var(--main-heading);
@@ -309,5 +311,55 @@ h1 {
 
 .about__link--pink:hover::before {
   background-color: var(--clr-about-link-pink-hover);
+}
+
+@media (min-width: 50em) {
+  .services {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.services__content {
+  padding: 26em 1.25em 3.75em;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.services__content p {
+  margin-inline: auto;
+  max-width: 40ch;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.services__content--graphic {
+  color: var(--graphic-service);
+  background-image: url("../images/mobile/image-graphic-design.jpg");
+}
+
+@media (min-width: 50em) {
+  .services__content--graphic {
+    background-image: url("../images/desktop/image-graphic-design.jpg");
+  }
+}
+
+.services__content--photography {
+  color: var(--photography-service);
+  background-image: url("../images/mobile/image-photography.jpg");
+}
+
+@media (min-width: 50em) {
+  .services__content--photography {
+    background-image: url("../images/desktop/image-photography.jpg");
+  }
+}
+
+.services__heading {
+  margin-bottom: 4rem;
+  font-size: 3rem;
 }
 /*# sourceMappingURL=main.css.map */
