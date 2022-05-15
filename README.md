@@ -4,8 +4,8 @@ This is a solution to the [Sunnyside agency landing page challenge on Frontend M
 
 ### Links
 
-- Solution URL: [Frontendmentor Solution Page](https://your-solution-url.com)
-- Live Site URL: [GitHub Pages Site](https://your-live-site-url.com)
+- Solution URL: [Frontendmentor Solution Page](https://www.frontendmentor.io/solutions/sunnyside-agency-landing-page-SJ0rXs08c)
+- Live Site URL: [GitHub Pages Site](https://karolbanat.github.io/sunnyside-agency-landing-page/)
 
 ## Author
 
