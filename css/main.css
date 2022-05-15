@@ -13,8 +13,10 @@
   --ff-primary: 'Fraunces', serif;
   --ff-secondary: 'Barlow', sans-serif;
   --ff-heading: var(--ff-primary);
-  --nav-link: var(--clr-white);
-  --bg-btn-nav-link: var(--clr-white);
+  --nav-link: var(--clr-neutral-300);
+  --nav-link-desktop: var(--clr-white);
+  --nav-link-hover: var(--clr-neutral-500);
+  --bg-btn-nav-link: var(--clr-primary-200);
   --ff-btn-link: var(--ff-primary);
   --main-heading: var(--clr-white);
   --clr-about-text: var(--clr-neutral-300);
@@ -127,6 +129,7 @@ h1 {
 }
 
 .nav {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -154,7 +157,21 @@ h1 {
 }
 
 .nav__links {
-  display: none;
+  text-align: center;
+}
+
+@media (max-width: 47.5em) {
+  .nav__links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    padding-block: 4rem;
+    background-color: #fff;
+  }
+  .nav__links.active {
+    display: block;
+  }
 }
 
 @media (min-width: 47.5em) {
@@ -166,22 +183,49 @@ h1 {
 }
 
 .nav__link {
-  display: block;
+  display: inline-block;
   padding: 1em 1.5em;
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 600;
   text-decoration: none;
   color: var(--nav-link);
+  -webkit-transition: color 0.35s ease;
+  transition: color 0.35s ease;
+}
+
+@media (min-width: 47.5em) {
+  .nav__link {
+    --nav-link: var(--clr-white);
+    font-size: 1.8rem;
+  }
+}
+
+.nav__link:hover {
+  color: var(--nav-link-hover);
 }
 
 .nav__link--btn {
   --nav-link: var(--clr-black);
+  margin-top: 1em;
   padding-inline: 2em;
-  margin-left: 1.5em;
   font-family: var(--ff-btn-link);
   text-transform: uppercase;
-  background-color: var(--clr-white);
+  background-color: var(--bg-btn-nav-link);
   border-radius: 50em;
+}
+
+@media (min-width: 47.5em) {
+  .nav__link--btn {
+    --bg-btn-nav-link: var(--clr-white);
+    margin-top: 0;
+    margin-left: 1.5em;
+    -webkit-transition: background-color 0.35s ease, color 0.35s ease;
+    transition: background-color 0.35s ease, color 0.35s ease;
+  }
+  .nav__link--btn:hover {
+    --bg-btn-nav-link: hsl(199, 100%, 72%);
+    --nav-link-hover: var(--clr-white);
+  }
 }
 
 @media (max-width: 50em) {

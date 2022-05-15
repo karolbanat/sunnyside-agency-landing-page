@@ -18,8 +18,10 @@
 
 	// stage
 	--ff-heading: var(--ff-primary);
-	--nav-link: var(--clr-white);
-	--bg-btn-nav-link: var(--clr-white);
+	--nav-link: var(--clr-neutral-300);
+	--nav-link-desktop: var(--clr-white);
+	--nav-link-hover: var(--clr-neutral-500);
+	--bg-btn-nav-link: var(--clr-primary-200);
 	--ff-btn-link: var(--ff-primary);
 
 	--main-heading: var(--clr-white);
@@ -129,6 +131,7 @@ h1 {
 
 // navigation
 .nav {
+	position: relative;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -148,7 +151,20 @@ h1 {
 	}
 
 	&__links {
-		display: none;
+		text-align: center;
+
+		@media (max-width: 47.5em) {
+			display: none;
+			position: absolute;
+			top: 100%;
+			width: 100%;
+			padding-block: 4rem;
+			background-color: #fff;
+
+			&.active {
+				display: block;
+			}
+		}
 
 		@media (min-width: 47.5em) {
 			display: flex;
@@ -156,22 +172,43 @@ h1 {
 	}
 
 	&__link {
-		display: block;
+		display: inline-block;
 		padding: 1em 1.5em;
-		font-size: 1.8rem;
+		font-size: 2rem;
 		font-weight: 600;
 		text-decoration: none;
 		color: var(--nav-link);
+		transition: color 0.35s ease;
+
+		@media (min-width: 47.5em) {
+			--nav-link: var(--clr-white);
+			font-size: 1.8rem;
+		}
+
+		&:hover {
+			color: var(--nav-link-hover);
+		}
 
 		&--btn {
 			--nav-link: var(--clr-black);
-
+			margin-top: 1em;
 			padding-inline: 2em;
-			margin-left: 1.5em;
 			font-family: var(--ff-btn-link);
 			text-transform: uppercase;
-			background-color: var(--clr-white);
+			background-color: var(--bg-btn-nav-link);
 			border-radius: 50em;
+
+			@media (min-width: 47.5em) {
+				--bg-btn-nav-link: var(--clr-white);
+				margin-top: 0;
+				margin-left: 1.5em;
+				transition: background-color 0.35s ease, color 0.35s ease;
+
+				&:hover {
+					--bg-btn-nav-link: hsl(199, 100%, 72%);
+					--nav-link-hover: var(--clr-white);
+				}
+			}
 		}
 	}
 }
